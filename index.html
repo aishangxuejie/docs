@@ -3,7 +3,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>docsify-thy一键部署个人文档博客</title>
+  <title>个人文档博客</title>
+  <link rel="icon" href="./_media/ayetk-i8ehc.svg" sizes="16x16">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="viewport"
     content="width=device-width,height=device-height,initial-scale=1,maximum-scale=1,user-scalable=no">
@@ -12,13 +13,11 @@
   <meta
     content="🌟docsify-thy是一个 Docsify 模板，你可以使用此模板 [docsify-thy]创建自己文档博客。关于动态文档生成工具有很多如：Docsify、 VuePress、Hugo 、Hexo这些都是一些非常优秀的文档生成工具，这里主要介绍如何快速使用Docsify搭建一个快捷、轻量级的个人&amp;amp;团队文档。"
     name="description">
-  <meta property="og:description"
-    content="前言 关于动态文档生成工具有很多如：Docsify、 VuePress、Hugo 、Hexo这些都是一些非常优秀的文档生成工具，主要介绍如何快速使用Docsify搭建一个快捷、轻量级的个人&amp;amp;团队文档。 什么是Docsify？ 一个神奇的文档网站生成器。docsify-thy 可以快速帮你">
-
   <!-- themes : dark.css buble.css dolphin.css pure.css -->
-  <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
+  <link rel="stylesheet" href="//s4.zstatic.net/npm/docsify/lib/themes/vue.css">
   <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css"> -->
   <!-- <link href="https://cdn.bootcdn.net/ajax/libs/docsify/4.13.1/themes/vue.css" rel="stylesheet"> -->
+
 </head>
 
 <body>
@@ -38,7 +37,7 @@
       loadNavbar: true,
       onlyCover: true, //只在访问主页时加载封面
       coverpage: { // 自定义首页
-        '/': '_coverpage.md',
+        //` '/': '_coverpage.md',
         '/zh-cn/home1/': 'cover.md',
         '/zh-cn/home2/': 'cover.md',
       },
@@ -112,7 +111,23 @@
             return html + footer;
           });
         },
+        function (hook) {
+          var ads = [
+            '<div class="aside_container">',
+            '<div class= "advertisement" >',
+            '<a target="_blank" style="font-size:larger;font-family:cursive;font-weight:bold" href="https://s.018dt.com/VdQQzZZY">🔗免费申领</a>',
+            '<div id="img_show">',
+            '<img src="https://img.picgo.net/2024/11/29/c2e0729ea149a788b9f32409302b8c228436b7366f160070.png">',
+            '</div>',
+            '<a onclick="myFunction()" >~收~</a>',
+            '</div>',
+            '</div>',
+          ].join('');
 
+          hook.afterEach(function (html) {
+            return html + ads;
+          });
+        },
       ],
       count: {
         countable: true,
@@ -153,40 +168,40 @@
           '/': 'Copied',
         },
       },
-      ads: [
-        {
-          img: 'https://dev-skytop.oss-cn-chengdu.aliyuncs.com/shop/info/202312/2023-1229-2227-2d149722-h5.png',
-          href: 'https://h5.10000hk.com/#/?userSn=7LXJ7Rg5NBnZbNSkoKhdyrlpXb0PeosbYR06jVbxIBN'
-        },
-      ]
     }
 
+  </script>
+  <script>
+    function myFunction() {
+
+      var x = document.getElementById("img_show");
+      if (x.className.indexOf("img_show") == -1) {
+        x.className += " img_show";
+      } else {
+        x.className = x.className.replace(" img_show", "");
+      }
+    }
   </script>
   <!-- Docsify v4 -->
   <!-- <script src="//cdn.jsdelivr.net/npm/docsify@4"></script> -->
   <!-- <script src="https://cdn.bootcdn.net/ajax/libs/docsify/4.13.1/docsify.js"></script> -->
-  <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+  <script src="//s4.zstatic.net/npm/docsify/lib/docsify.min.js"></script>
   <!-- 插件 -->
-  <script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
-  <script src="//unpkg.com/docsify/lib/plugins/emoji.min.js"></script>
-  <script src="//unpkg.com/docsify/lib/plugins/zoom-image.min.js"></script>
+  <script src="//s4.zstatic.net/npm/docsify/lib/plugins/search.min.js"></script>
+  <script src="//s4.zstatic.net/npm/docsify/lib/plugins/emoji.min.js"></script>
+  <script src="//s4.zstatic.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
   <!-- w -->
-  <script src="//unpkg.com/docsify/lib/plugins/external-script.min.js"></script>
+  <script src="//s4.zstatic.net/npm/docsify/lib/plugins/external-script.min.js"></script>
   <!-- 分页插件 -->
-  <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
+  <script src="//s4.zstatic.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script>
   <!-- 代码高亮 -->
-  <script src="https://cdn.bootcdn.net/ajax/libs/prism/9000.0.1/components/prism-actionscript.min.js"></script>
-  <!-- 自定义广告 -->
-  <script src="https://unpkg.com/docsify-ads@1.0.4/dist/docsify-ads.min.js"></script>
+  <script src="//cdnjs.snrat.com/ajax/libs/prism/9000.0.1/components/prism-actionscript.min.js"></script>
   <!-- 字数统计 -->
-  <script src="//unpkg.com/docsify-count/dist/countable.js"></script>
+  <script src="//s4.zstatic.net/npm/docsify-count/dist/countable.js"></script>
   <!-- 代码复制 -->
-  <script src="https://unpkg.com/docsify-copy-code"></script>
+  <script src="//s4.zstatic.net/npm/docsify-copy-code"></script>
   <!-- 折叠侧边栏 -->
-  <script src="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
-
-  <script src="./lib/docsify-ads-footer.js"></script>
-
+  <script src="//s4.zstatic.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
 
   <!-- 离线模式 -->
   <!-- <script>
@@ -194,6 +209,23 @@
       navigator.serviceWorker.register('sw.js')
     }
   </script> -->
+  <style type="text/css">
+    .advertisement {
+      position: fixed;
+      right: 6px;
+      bottom: 100px;
+      width: 120px;
+      box-shadow: -1px 0px 2px 0px #79ea15;
+      padding: 10px;
+      /* z-index: 99; */
+      background-color: #fff;
+      text-align: center;
+    }
+
+    .img_show {
+      display: none;
+    }
+  </style>
 </body>
 
 </html>
