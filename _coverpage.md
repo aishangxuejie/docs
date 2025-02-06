@@ -1,8 +1,8 @@
 ![logo](_media/icon.svg)
 
-# docsify <small>3.5</small>
+# 狂人日记<small>1918</small>
 
-> 一个拆箱即用的docsify模板，您可以专注内容，而不必担忧复杂的配置。
+> 救救孩子们.....
 
 - 简单、轻便、开放、有趣
 - GitHub Page CI/CD
@@ -10,3 +10,6 @@
 
 [关于本站](/readme.md)
 
+<!-- 背景图片 -->
+
+![](_media/00227056-2e24-11eb-a173-423d43dfe36d-0m0s.jpg)

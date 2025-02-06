@@ -1,11 +1,13 @@
-![logo](../../_media/icon.svg)
+<img src="../../_media/Minecraft_Twitter_logo.jpg" title=" alt=&quot;img" style="zoom: 25%;" />
 
-# docsify <small>3.5</small>
+# 🎮 我的游戏小屋
 
-> 一个开放的 Markdown 文档空间
+> 在开放的游戏世界中获得快乐！
 
-- 简单、轻便、开放、有趣
-- Gitlab CI/CD
-- 知识库
+- 生存、创造
 
-[Get Started](/zh-cn/home2/readme.md)
+[启动！](/zh-cn/home2/readme.md)
+
+<!-- 背景图片 -->
+
+![](../../_media/wallpaper_minecraft_buzzybees_1920x1080.png)
