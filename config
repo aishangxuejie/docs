@@ -1,0 +1,20 @@
+[core]
+	repositoryformatversion = 0
+	filemode = false
+	bare = false
+	logallrefupdates = true
+	symlinks = false
+	ignorecase = true
+[remote "orgin"]
+	url = https://github.com/aishangxuejie/docsify-thy.git
+	fetch = +refs/heads/*:refs/remotes/orgin/*
+[user]
+	name = npc
+	email = aishangxuejie@gmail.com
+[branch "origin/main"]
+	remote = orgin
+	merge = refs/heads/origin/main
+[branch "main"]
+	remote = orgin
+	merge = refs/heads/main
+	vscode-merge-base = orgin/main

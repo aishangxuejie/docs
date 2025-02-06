@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>docsify-thy一键部署个人文档博客</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta property="og:description" name="viewport"
+    content="width=device-width,height=device-height,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta property="og:title"
+    content="docsify,Docsify,docsify-thy,搭建博客,文档网站,Hugo,GitHub Page,docsifyjs,docsify模板,博客,Blog,一键搭建" name="keywords">
+  <meta property="og:description"
+    content="🌟docsify-thy是一个 Docsify 模板，你可以使用此模板 [docsify-thy]创建自己文档博客。关于动态文档生成工具有很多如：Docsify、 VuePress、Hugo 、Hexo这些都是一些非常优秀的文档生成工具，这里主要介绍如何快速使用Docsify搭建一个快捷、轻量级的个人&amp;amp;团队文档。"
+    name="description">
+  <meta property="og:description"
+    content="前言 关于动态文档生成工具有很多如：Docsify、 VuePress、Hugo 、Hexo这些都是一些非常优秀的文档生成工具，主要介绍如何快速使用Docsify搭建一个快捷、轻量级的个人&amp;amp;团队文档。 什么是Docsify？ 一个神奇的文档网站生成器。docsify-thy 可以快速帮你">
+
+  <!-- themes : dark.css buble.css dolphin.css pure.css -->
+  <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
+  <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css"> -->
+  <!-- <link href="https://cdn.bootcdn.net/ajax/libs/docsify/4.13.1/themes/vue.css" rel="stylesheet"> -->
+</head>
+
+<body>
+  <div id="app">
+  </div>
+  <!-- <script>
+    window.$docsify = {
+      name: '',
+      repo: 'ssh://git@*.git'
+    }
+  </script> -->
+  <script>
+    window.$docsify = {
+      el: '#app',
+      // repo: 'docsifyjs/docsify',
+      maxLevel: 4,
+      loadNavbar: true,
+      onlyCover: true, //只在访问主页时加载封面
+      coverpage: { // 自定义首页
+        '/': '_coverpage.md',
+        '/zh-cn/home1/': 'cover.md',
+        '/zh-cn/home2/': 'cover.md',
+      },
+      auto2top: true,
+      loadSidebar: true,
+      autoHeader: true,
+      alias: { //自定义侧边栏
+        // 配置alias字段后，所有页面都会显示项目根目录/_sidebar.md文件的配置作为侧边栏，子目录的_sidebar.md文件会失效。
+        '/_sidebar.md': '/_sidebar.md',
+        '/zh-cn/home1/.*/_sidebar.md': '/zh-cn/home1/_sidebar.md',
+        '/zh-cn/home2/.*/_sidebar.md': '/zh-cn/home2/_sidebar.md',
+      },
+      subMaxLevel: 3,
+      sidebarDisplayLevel: 1, // set sidebar display level
+
+      search: 'auto', // 默认值
+      search: [
+        '/',            // => /README.md
+        '/zh-cn/',      // => /zh-cn/README.md
+        '/zh-cn/home1/',
+        '/zh-cn/home2/',
+      ],
+      // 完整配置参数
+      search: {
+        maxAge: 86400000, // 过期时间，单位毫秒，默认一天
+        paths: [], // or 'auto'
+        // Localization
+        placeholder: {
+          '/zh-cn/': '搜索',
+          '/': 'Type to search',
+        },
+
+        // Localization
+        noData: {
+          '/zh-cn/': '找不到结果',
+          '/': 'No Results',
+        },
+
+        // 搜索标题的最大层级, 1 - 6
+        depth: 4,
+
+        hideOtherSidebarContent: false, // 是否隐藏其他侧边栏内容
+
+        // 避免搜索索引冲突
+        // 同一域下的多个网站之间
+        namespace: 'website-1',
+
+        // 使用不同的索引作为路径前缀（namespaces）
+        // 注意：仅适用于 paths: 'auto' 模式
+        //
+        // 初始化索引时，我们从侧边栏查找第一个路径
+        // 如果它与列表中的前缀匹配，我们将切换到相应的索引
+        pathNamespaces: ['/', '/zh-cn',],
+
+        // 您可以提供一个正则表达式来匹配前缀。在这种情况下，
+        // 匹配到的字符串将被用来识别索引
+        // pathNamespaces: /^(\/(zh-cn|ru-ru))?(\/(v1|v2))?/
+      },
+
+      // 给每个页面的末尾加上 footer
+      plugins: [
+        function (hook) {
+          var footer = [
+            '<hr/>',
+            '<footer>',
+            '<span><a href="https://github.com/aishangxuejie/docsify-thy">Aishangxuejie</a> &copy;2024.</span>',
+            '<span>Proudly published with <a href="https://github.com/aishangxuejie/docsify-thy" target="_blank">docsify-thy</a>.</span>',
+            '</footer>'
+          ].join('');
+
+          hook.afterEach(function (html) {
+            return html + footer;
+          });
+        },
+
+      ],
+      count: {
+        countable: true,
+        position: 'top',
+        margin: '10px',
+        float: 'right',
+        fontsize: '0.9em',
+        color: 'rgb(90,90,90)',
+        language: 'chinese',
+        localization: {
+          words: "",
+          minute: ""
+        },
+        isExpected: true
+      },
+      pagination: {
+        previousText: '上一章节',
+        nextText: '下一章节',
+      },
+      copyCode: {
+        buttonText: {
+          '/zh-cn/': '点击复制',
+          '/ru/': 'Скопировать в буфер обмена',
+          '/de-de/': 'Klicken Sie zum Kopieren',
+          '/es/': 'Haga clic para copiar',
+          '/': 'Copy to clipboard',
+        },
+        errorText: {
+          '/zh-cn/': '错误',
+          '/ru/': 'ошибка',
+          '/': 'Error',
+        },
+        successText: {
+          '/zh-cn/': '复制',
+          '/ru/': 'Скопировано',
+          '/de-de/': 'Kopiert',
+          '/es/': 'Copiado',
+          '/': 'Copied',
+        },
+      },
+      ads: [
+        {
+          img: 'https://dev-skytop.oss-cn-chengdu.aliyuncs.com/shop/info/202312/2023-1229-2227-2d149722-h5.png',
+          href: 'https://h5.10000hk.com/#/?userSn=7LXJ7Rg5NBnZbNSkoKhdyrlpXb0PeosbYR06jVbxIBN'
+        },
+      ]
+    }
+
+  </script>
+  <!-- Docsify v4 -->
+  <!-- <script src="//cdn.jsdelivr.net/npm/docsify@4"></script> -->
+  <!-- <script src="https://cdn.bootcdn.net/ajax/libs/docsify/4.13.1/docsify.js"></script> -->
+  <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+  <!-- 插件 -->
+  <script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
+  <script src="//unpkg.com/docsify/lib/plugins/emoji.min.js"></script>
+  <script src="//unpkg.com/docsify/lib/plugins/zoom-image.min.js"></script>
+  <!-- w -->
+  <script src="//unpkg.com/docsify/lib/plugins/external-script.min.js"></script>
+  <!-- 分页插件 -->
+  <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
+  <!-- 代码高亮 -->
+  <script src="https://cdn.bootcdn.net/ajax/libs/prism/9000.0.1/components/prism-actionscript.min.js"></script>
+  <!-- 自定义广告 -->
+  <script src="https://unpkg.com/docsify-ads@1.0.4/dist/docsify-ads.min.js"></script>
+  <!-- 字数统计 -->
+  <script src="//unpkg.com/docsify-count/dist/countable.js"></script>
+  <!-- 代码复制 -->
+  <script src="https://unpkg.com/docsify-copy-code"></script>
+  <!-- 折叠侧边栏 -->
+  <!-- <script src="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script> -->
+
+
+  <!-- 离线模式 -->
+  <!-- <script>
+    if (typeof navigator.serviceWorker !== 'undefined') {
+      navigator.serviceWorker.register('sw.js')
+    }
+  </script> -->
+</body>
+
+</html>
