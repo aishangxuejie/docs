@@ -1,3 +1,4 @@
-# 欢迎使用 docsify-sidebar-auto-generager-plugin
+# Welcome! docsify-sidebar-plugin
 
-这是自动生成的 README.md 文件。
+ This is an auto-created README.md
+
