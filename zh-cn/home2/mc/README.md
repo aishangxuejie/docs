@@ -1,4 +1,2 @@
-# 玩游戏嘛
-
- This is an auto-created README.md
+曾经很喜欢玩MC
 

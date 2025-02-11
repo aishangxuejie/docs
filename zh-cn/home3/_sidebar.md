@@ -7,6 +7,7 @@
 - [🍎 中兴F50玩机](zh-cn/home3/中兴F50玩机.md)
 
 <!-- 更新于 2025-01-02T08:35:00.252Z -->
+
 - [📂 magic](zh-cn/home3/magic/)
   - [🍒 Certbot](zh-cn/home3/magic/Certbot.md)
   - [🍇 Hysteria2](zh-cn/home3/magic/Hysteria2.md)
@@ -15,5 +16,6 @@
   - [🌽 VPN：远程办公和科学上网](zh-cn/home3/magic/VPN：远程办公和科学上网.md)
 
 <!-- update on 2025-02-07T09:26:49.994Z -->
+
 - [📂 AIseek](zh-cn/home3/AIseek/)
   - [🥒 ollama记录](zh-cn/home3/AIseek/ollama记录.md)

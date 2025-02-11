@@ -1,3 +1,1 @@
-# 科学上网
-
- This is an auto-created README.md
+不到长城非好汉！

@@ -1,4 +1,1 @@
-# Welcome! docsify-sidebar-plugin
-
- This is an auto-created README.md
-
+梦想很丰满，还没开始估计就烂尾了
