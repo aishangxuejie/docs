@@ -232,9 +232,9 @@ http:
 
 各种客户端陆续开始支持 hysteria 2
 
-karing 导入配置文件。
+###### karing 配置文件
 
-```
+```json
 {
   "attach": "",
   "outlet_ip": "",
@@ -255,5 +255,104 @@ karing 导入配置文件。
     ]
   }
 }
+```
+
+###### sing-box 配置文件
+
+```json
+{
+  "dns": {
+    "servers": [
+      {
+        "tag": "cf",
+        "address": "https://1.1.1.1/dns-query"
+      },
+      {
+        "tag": "local",
+        "address": "223.5.5.5",
+        "detour": "direct"
+      },
+      {
+        "tag": "block",
+        "address": "rcode://success"
+      }
+    ],
+    "rules": [
+      {
+        "geosite": "category-ads-all",
+        "server": "block",
+        "disable_cache": true
+      },
+      {
+        "outbound": "any",
+        "server": "local"
+      },
+      {
+        "geosite": "cn",
+        "server": "local"
+      }
+    ],
+    "strategy": "ipv4_only"
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "inet4_address": "172.19.0.1/30",
+      "auto_route": true,
+      "strict_route": false,
+      "sniff": true
+    }
+  ],
+  "outbounds": [
+    {
+      "type": "hysteria2",
+      "tag": "proxy",
+      "server": "IP",             // VPS IP
+      "server_port": 443,         // 端口
+      "up_mbps": 30,              //上传速率，按本地速度填写
+      "down_mbps": 100,           //下载速率，按本地速度填写
+      "password": "88888888",     //hysteria2 服务密码
+      "tls": {
+        "enabled": true,
+        "server_name": "www.bing.com",
+        "insecure": true              
+      }
+    },
+    {
+      "type": "direct",
+      "tag": "direct"
+    },
+    {
+      "type": "block",
+      "tag": "block"
+    },
+    {
+      "type": "dns",
+      "tag": "dns-out"
+    }
+  ],
+  "route": {
+    "rules": [
+      {
+        "protocol": "dns",
+        "outbound": "dns-out"
+      },
+      {
+        "geosite": "cn",
+        "geoip": [
+          "private",
+          "cn"
+        ],
+        "outbound": "direct"
+      },
+      {
+        "geosite": "category-ads-all",
+        "outbound": "block"
+      }
+    ],
+    "auto_detect_interface": true
+  }
+}
+
 ```
 
